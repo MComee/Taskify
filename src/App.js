@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './App.css';
 
@@ -254,8 +254,8 @@ function FooterSection() {
       <p className="footer-love">Made with ❤️ by Your Name</p>
       <div className="social-links">
         {/* Placeholder for social media icons */}
-        <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Twitter</a>
       </div>
     </footer>
   );
