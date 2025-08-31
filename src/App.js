@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform, useMotionValue, useMotionValueEvent } from 'framer-motion';
 import './App.css';
 
 /**
