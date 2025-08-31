@@ -20,9 +20,12 @@ function Navbar() {
     const previousY = scrollY.getPrevious(); // Get previous scroll position
     if (latestY > previousY && latestY > 100) { // Scrolling down and past 100px
       return -100; // Hide navbar (move up)
-    } else if (latestY < previousY || latestY <= 100) { // Scrolling up or near top
+    } else if (latestY < previousY) { // Scrolling up
       return 0; // Show navbar (move to original position)
     }
+    // If not scrolling down past 100px, and not scrolling up,
+    // it means we are either at the top or scrolling down within the first 100px.
+    // In these cases, the navbar should be visible.
     return 0; // Default to visible
   });
 
