@@ -16,17 +16,38 @@ function Navbar() {
   const filter = useTransform(scrollY, [0, 100], ['blur(0px)', 'blur(5px)']);
 
   // Hide/reveal based on scroll direction
-  const y = useTransform(scrollY, (latestY) => {
-    const previousY = scrollY.getPrevious(); // Get previous scroll position
-    if (latestY > previousY && latestY > 100) { // Scrolling down and past 100px
-      return -100; // Hide navbar (move up)
-    } else if (latestY < previousY) { // Scrolling up
-      return 0; // Show navbar (move to original position)
+  const lastY = useRef(0);
+  const y = useMotionValue(0); // This will be the actual y position of the navbar
+
+  // Shrink and blur
+  const scale = useTransform(scrollY, [0, 100], [1, 0.9]);
+  const filter = useTransform(scrollY, [0, 100], ['blur(0px)', 'blur(5px)']);
+
+  // Define the scroll distance for the reveal/hide animation
+  const animationDistance = 50; // Navbar fully reveals/hides within 50px scroll
+
+  useMotionValueEvent(scrollY, "change", (latestY) => {
+    const previousY = lastY.current;
+    const scrollDelta = latestY - previousY;
+
+    // If scrolling down and past a threshold, start hiding
+    if (scrollDelta > 0 && latestY > 100) {
+      // Calculate how much to hide based on scrollDelta, clamped between -100 and 0
+      y.set(Math.max(-100, y.get() - scrollDelta));
     }
-    // If not scrolling down past 100px, and not scrolling up,
-    // it means we are either at the top or scrolling down within the first 100px.
-    // In these cases, the navbar should be visible.
-    return 0; // Default to visible
+    // If scrolling up, reveal faster
+    else if (scrollDelta < 0) {
+      // Calculate how much to reveal based on scrollDelta, clamped between -100 and 0
+      // To make it reveal faster, we can make the change in y larger for a given scrollDelta
+      // For example, if scrollDelta is -10, we want y to change by +20 (twice as fast)
+      y.set(Math.min(0, y.get() - scrollDelta * 2)); // Multiply by 2 for faster reveal
+    }
+    // If at the top, ensure it's fully visible
+    if (latestY <= 100) {
+      y.set(0);
+    }
+
+    lastY.current = latestY;
   });
 
   // Function to toggle the mobile menu's open/closed state
