@@ -20,7 +20,7 @@ function Navbar() {
   const y = useMotionValue(0); // This will be the actual y position of the navbar
 
   // Define the scroll distance for the reveal/hide animation
-  const animationDistance = 50; // Navbar fully reveals/hides within 50px scroll
+  
 
   useMotionValueEvent(scrollY, "change", (latestY) => {
     const previousY = lastY.current;
