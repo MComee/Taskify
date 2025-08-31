@@ -34,9 +34,8 @@ function Navbar() {
     // If scrolling up, reveal faster
     else if (scrollDelta < 0) {
       // Calculate how much to reveal based on scrollDelta, clamped between -100 and 0
-      // To make it reveal faster, we can make the change in y larger for a given scrollDelta
-      // For example, if scrollDelta is -10, we want y to change by +20 (twice as fast)
-      y.set(Math.min(0, y.get() - scrollDelta * 2)); // Multiply by 2 for faster reveal
+      // To make it reveal as deltaY reaches -100, we add the absolute scrollDelta to y.
+      y.set(Math.min(0, y.get() + Math.abs(scrollDelta)));
     }
     // If at the top, ensure it's fully visible
     if (latestY <= 100) {
