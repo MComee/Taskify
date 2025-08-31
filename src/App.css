@@ -1,7 +1,19 @@
+:root {
+  --primary-indigo: #4F46E5;
+  --darker-indigo: #4338CA;
+  --accent-emerald: #10B981; /* New accent color */
+  --text-dark: #111827;
+  --text-gray: #6B7280;
+  --light-gray: #D1D5DB;
+  --bg-light: #F9FAFB;
+  --bg-white: #FFFFFF;
+  --border-light: #E5E7EB;
+}
+
 /* Navbar Styles */
 .navbar {
-  background-color: #111827; /* Dark background color for the navbar */
-  color: #FFFFFF; /* White text color for navbar content */
+  background-color: var(--text-dark); /* Dark background color for the navbar */
+  color: var(--bg-white); /* White text color for navbar content */
   padding: 1rem 0; /* Vertical padding for the navbar */
   position: sticky; /* Makes the navbar stick to the top when scrolling */
   top: 0; /* Sticks to the very top of the viewport */
@@ -21,7 +33,7 @@
   font-family: 'Poppins', sans-serif; /* Poppins font for the logo */
   font-weight: 700; /* Bold font weight */
   font-size: 1.5rem; /* Large font size for the logo */
-  color: #FFFFFF; /* White color for the logo text */
+  color: var(--bg-white); /* White color for the logo text */
   text-decoration: none; /* Removes underline from the logo link */
 }
 
@@ -38,21 +50,21 @@
 
 .navbar .nav-links a {
   font-family: 'Poppins', sans-serif; /* Poppins font for navigation links */
-  color: #D1D5DB; /* Light gray color for links */
+  color: var(--light-gray); /* Light gray color for links */
   text-decoration: none; /* Removes underline from links */
   font-weight: 500; /* Medium font weight */
   transition: color 0.3s ease; /* Smooth transition for color changes on hover */
 }
 
 .navbar .nav-links a:hover {
-  color: #FFFFFF; /* White color on hover */
+  color: var(--bg-white); /* White color on hover */
 }
 
 /* Global Styles */
 body {
   font-family: 'Inter', sans-serif; /* Default font for the body */
-  background-color: #E5E7EB; /* Light gray background color */
-  color: #111827; /* Dark charcoal text color */
+  background-color: var(--border-light); /* Light gray background color */
+  color: var(--text-dark); /* Dark charcoal text color */
   margin: 0; /* Removes default body margin */
 }
 
@@ -66,12 +78,12 @@ body {
 
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif; /* Poppins font for headings */
-  color: #111827; /* Dark charcoal color for headings */
+  color: var(--text-dark); /* Dark charcoal color for headings */
 }
 
 h1 {
   font-size: 48px; /* Large font size for main headings */
-  font-weight: 700; /* Bold font weight */
+  font-weight: 800; /* Extra-Bold font weight */
 }
 
 h2 {
@@ -80,9 +92,13 @@ h2 {
   margin-bottom: 2rem; /* Space below subheadings */
 }
 
+h3 {
+  font-weight: 600; /* Semi-Bold font weight */
+}
+
 p {
   font-size: 18px; /* Font size for paragraphs */
-  color: #6B7280; /* Medium gray color for paragraphs */
+  color: var(--text-gray); /* Medium gray color for paragraphs */
   line-height: 1.6; /* Line height for readability */
 }
 
@@ -92,24 +108,29 @@ button {
   font-size: 16px; /* Font size for buttons */
   text-transform: uppercase; /* Uppercase text for buttons */
   padding: 1rem 2rem; /* Padding for buttons */
-  border-radius: 0.5rem; /* Rounded corners for buttons */
+  border-radius: 12px; /* Rounded corners for buttons */
   border: none; /* Removes button border */
   cursor: pointer; /* Changes cursor to pointer on hover */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for background and transform */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-  background-color: #4F46E5; /* Indigo blue background for primary buttons */
-  color: #FFFFFF; /* White text color for buttons */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions for background, transform, and shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds a more pronounced subtle shadow for depth */
+  background-color: var(--primary-indigo); /* Indigo blue background for primary buttons */
+  color: var(--bg-white); /* White text color for buttons */
 }
 
 button:hover {
-  background-color: #4338CA; /* Darker indigo on hover */
+  background-color: var(--darker-indigo); /* Darker indigo on hover */
   transform: translateY(-2px); /* Slight upward lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
 
 /* Hero Section Styles */
 .hero-section {
-  background-color: #FFFFFF; /* White background for the hero section */
+  background-color: var(--bg-white); /* White background for the hero section */
   padding: 6rem 2rem; /* Generous padding for the hero section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-section h1 {
@@ -121,100 +142,269 @@ button:hover {
   margin: 0 auto 2rem; /* Centers the paragraph and adds bottom margin */
 }
 
+.hero-tagline {
+  font-size: 1.2rem;
+  color: var(--primary-indigo);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-badge {
+  background-color: var(--accent-emerald);
+  color: var(--bg-white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hero-illustration {
+  max-width: 500px;
+  height: auto;
+  margin-top: 3rem;
+}
+
 .secondary-cta {
   font-family: 'Poppins', sans-serif; /* Poppins font for secondary CTA */
   font-weight: 500; /* Medium font weight */
-  color: #4F46E5; /* Indigo blue color for secondary CTA */
+  color: var(--primary-indigo); /* Indigo blue color for secondary CTA */
   text-decoration: none; /* Removes underline */
   margin-left: 1rem; /* Space to the left of the secondary CTA */
+  transition: color 0.3s ease; /* Smooth transition for color changes on hover */
 }
 
 .secondary-cta:hover {
+  color: var(--accent-emerald); /* Emerald green on hover */
   text-decoration: underline; /* Underline on hover */
 }
 
 /* Features Section Styles */
 .features-section {
-  background-color: #F9FAFB; /* Light gray background for features section */
+  background-color: var(--bg-light); /* Light gray background for features section */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .features-section .service-item {
-  background-color: #FFFFFF; /* White background for individual service items */
+  background-color: var(--bg-white); /* White background for individual service items */
   padding: 2rem; /* Padding for service items */
-  border-radius: 0.5rem; /* Rounded corners */
-  margin-bottom: 1.5rem; /* Space below service items */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.features-section .service-item:hover {
+  transform: translateY(-5px); /* Slight upward lift on hover */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-indigo);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-icon svg {
+  width: 30px;
+  height: 30px;
+  color: var(--bg-white);
+}
+
+.feature-card:nth-child(odd) {
+  background-color: var(--bg-white);
+}
+
+.feature-card:nth-child(even) {
+  background-color: var(--bg-light);
 }
 
 /* How It Works Section Styles */
 .how-it-works-section {
-  background-color: #FFFFFF; /* White background for how it works section */
+  background-color: var(--bg-white); /* White background for how it works section */
 }
 
 /* Testimonials Section Styles */
 .testimonials-section {
-  background-color: #F9FAFB; /* Light gray background for testimonials section */
+  background-color: var(--bg-light); /* Light gray background for testimonials section */
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .testimonial-item {
-  background-color: #FFFFFF; /* White background for individual testimonial items */
+  background-color: var(--bg-white); /* White background for individual testimonial items */
   padding: 2rem; /* Padding for testimonial items */
-  border-radius: 0.5rem; /* Rounded corners */
-  margin-bottom: 1.5rem; /* Space below testimonial items */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .testimonial-item p:first-child {
   font-style: italic; /* Italic style for the testimonial quote */
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-indigo);
+  border-radius: 50%;
+  /* Placeholder for avatar image */
+  background-image: url('https://via.placeholder.com/50'); /* Example placeholder */
+  background-size: cover;
+  background-position: center;
 }
 
 /* Pricing Section Styles */
 .pricing-section {
-  background-color: #FFFFFF; /* White background for pricing section */
+  background-color: var(--bg-white); /* White background for pricing section */
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .pricing-plan {
-  background-color: #F9FAFB; /* Light gray background for pricing plans */
+  background-color: var(--bg-light); /* Light gray background for pricing plans */
   padding: 2rem; /* Padding for pricing plans */
-  border-radius: 0.5rem; /* Rounded corners */
+  border-radius: 12px; /* Rounded corners */
   margin-bottom: 1.5rem; /* Space below pricing plans */
-  border: 1px solid #E5E7EB; /* Light border */
+  border: 1px solid var(--border-light); /* Light border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  position: relative; /* For positioning the badge */
+  overflow: hidden; /* To clip the badge if it overflows */
+}
+
+.pricing-plan:hover {
+  transform: translateY(-5px); /* Slight upward lift on hover */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+}
+
+.highlighted-plan {
+  border-color: var(--primary-indigo); /* Highlight border with primary indigo */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.highlighted-plan button {
+  background-color: var(--primary-indigo);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 1rem;
+  right: -2rem; /* Adjust to position the badge */
+  background-color: var(--accent-emerald);
+  color: var(--bg-white);
+  padding: 0.3rem 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  transform-origin: 100% 0%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* CTA Banner Section Styles */
 .cta-banner-section {
-  background-color: #4F46E5; /* Indigo blue background for CTA banner */
-  color: #FFFFFF; /* White text color */
+  background-color: var(--primary-indigo); /* Indigo blue background for CTA banner */
+  color: var(--bg-white); /* White text color */
 }
 
 .cta-banner-section h2 {
-  color: #FFFFFF; /* White color for heading in CTA banner */
+  color: var(--bg-white); /* White color for heading in CTA banner */
 }
 
 /* Footer Section Styles */
 .footer-section {
-  background-color: #111827; /* Dark background for the footer */
-  color: #FFFFFF; /* White text color */
+  background-color: var(--text-dark); /* Dark background for the footer */
+  color: var(--bg-white); /* White text color */
   padding: 2rem; /* Padding for the footer */
 }
 
 .footer-section p {
-  color: #D1D5DB; /* Light gray color for footer text */
+  color: var(--light-gray); /* Light gray color for footer text */
   margin: 0.5rem 0; /* Vertical margin for footer paragraphs */
+}
+
+.footer-love {
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  color: var(--light-gray);
+}
+
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: var(--light-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-emerald);
 }
 
 /* Contact Section Styles */
 .contact-section {
-  background-color: #F9FAFB; /* Light gray background for contact section */
-  color: #111827; /* Dark charcoal text color */
+  background-color: var(--bg-light); /* Light gray background for contact section */
+  color: var(--text-dark); /* Dark charcoal text color */
 }
 
 .contact-section h2 {
-  color: #111827; /* Dark charcoal color for heading */
+  color: var(--text-dark); /* Dark charcoal color for heading */
 }
 
 .contact-section p {
-  color: #6B7280; /* Medium gray color for paragraphs */
+  color: var(--text-gray); /* Medium gray color for paragraphs */
 }
 
 .contact-section form {
@@ -230,10 +420,10 @@ button:hover {
   font-size: 1rem; /* Font size for input fields */
   padding: 1rem; /* Padding for input fields */
   margin-bottom: 1rem; /* Space below input fields */
-  border: 1px solid #E5E7EB; /* Light border for input fields */
-  border-radius: 0.5rem; /* Rounded corners for input fields */
-  background-color: #FFFFFF; /* White background for input fields */
-  color: #111827; /* Dark charcoal text color for input fields */
+  border: 1px solid var(--border-light); /* Light border for input fields */
+  border-radius: 12px; /* Rounded corners for input fields */
+  background-color: var(--bg-white); /* White background for input fields */
+  color: var(--text-dark); /* Dark charcoal text color for input fields */
 }
 
 .contact-section textarea {
@@ -258,7 +448,7 @@ button:hover {
 .hamburger .bar {
   width: 25px; /* Width of each bar */
   height: 3px; /* Height of each bar */
-  background-color: #FFFFFF; /* White color for bars */
+  background-color: var(--bg-white); /* White color for bars */
   margin: 4px 0; /* Vertical margin between bars */
   transition: 0.4s; /* Smooth transition for bar animations */
 }
@@ -272,7 +462,7 @@ button:hover {
     position: absolute; /* Positions absolutely within the navbar */
     top: 70px; /* Positions below the navbar header */
     left: 0; /* Aligns to the left */
-    background-color: #4F46E5; /* Indigo blue background for mobile menu */
+    background-color: var(--primary-indigo); /* Indigo blue background for mobile menu */
     text-align: center; /* Centers text */
   }
 

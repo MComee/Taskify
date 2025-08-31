@@ -47,10 +47,16 @@ function Navbar() {
 function HeroSection() {
   return (
     <section className="App-section hero-section">
+      <p className="hero-tagline">Simplify tasks. Celebrate wins. Stay on track.</p>
       <h1>Organize your team’s work in minutes.</h1>
       <p>Taskify helps remote teams stay aligned, boost productivity, and hit deadlines without the chaos of endless emails.</p>
-      <button>Get Started Free</button>
-      <a href="#demo" className="secondary-cta">Watch Demo</a>
+      <div className="hero-actions">
+        <button>Get Started Free</button>
+        <a href="#demo" className="secondary-cta">Watch Demo</a>
+      </div>
+      <div className="hero-badge">Used by 300+ teams</div>
+      {/* Placeholder for SVG illustration */}
+      {/* <img src="/path/to/your/illustration.svg" alt="Teamwork illustration" className="hero-illustration" /> */}
     </section>
   );
 }
@@ -63,21 +69,27 @@ function FeaturesSection() {
   return (
     <section id="features" className="App-section features-section">
       <h2>Everything you need to manage projects effortlessly.</h2>
-      <div className="service-item">
-        <h3>Simple Task Management</h3>
-        <p>Create, assign, and track tasks with zero learning curve.</p>
-      </div>
-      <div className="service-item">
-        <h3>Real-Time Collaboration</h3>
-        <p>Chat and update tasks instantly with your team.</p>
-      </div>
-      <div className="service-item">
-        <h3>Smart Notifications</h3>
-        <p>Never miss a deadline with reminders that actually help.</p>
-      </div>
-      <div className="service-item">
-        <h3>Mobile Ready</h3>
-        <p>Stay productive anywhere with a responsive app.</p>
+      <div className="features-grid"> {/* Add a grid container for features */}
+        <div className="service-item feature-card">
+          <div className="feature-icon">{/* SVG for Simple Task Management */}</div>
+          <h3>Simple Task Management</h3>
+          <p>Create, assign, and track tasks with zero learning curve.</p>
+        </div>
+        <div className="service-item feature-card">
+          <div className="feature-icon">{/* SVG for Real-Time Collaboration */}</div>
+          <h3>Real-Time Collaboration</h3>
+          <p>Chat and update tasks instantly with your team.</p>
+        </div>
+        <div className="service-item feature-card">
+          <div className="feature-icon">{/* SVG for Smart Notifications */}</div>
+          <h3>Smart Notifications</h3>
+          <p>Never miss a deadline with reminders that actually help.</p>
+        </div>
+        <div className="service-item feature-card">
+          <div className="feature-icon">{/* SVG for Mobile Ready */}</div>
+          <h3>Mobile Ready</h3>
+          <p>Stay productive anywhere with a responsive app.</p>
+        </div>
       </div>
     </section>
   );
@@ -106,17 +118,28 @@ function TestimonialsSection() {
   return (
     <section id="testimonials" className="App-section testimonials-section">
       <h2>Trusted by teams everywhere.</h2>
-      <div className="testimonial-item">
-        <p>"Taskify reduced our project delays by 40%. It’s a game-changer for our agency."</p>
-        <p>- Sarah L., Marketing Manager</p>
-      </div>
-      <div className="testimonial-item">
-        <p>"Our remote team finally feels connected. Taskify is simple, fast, and reliable."</p>
-        <p>- David R., Startup Founder</p>
-      </div>
-      <div className="testimonial-item">
-        <p>"We tried 3 other tools, but Taskify was the only one our team actually enjoyed using."</p>
-        <p>- Priya K., Operations Lead</p>
+      <div className="testimonials-grid"> {/* Add a grid container for testimonials */}
+        <div className="testimonial-item">
+          <p>"I can’t believe how much easier Taskify made managing my team! It’s a game-changer for our agency."</p>
+          <div className="testimonial-author">
+            <div className="testimonial-avatar">{/* Avatar for Sarah L. */}</div>
+            <p>- Sarah L., Marketing Manager</p>
+          </div>
+        </div>
+        <div className="testimonial-item">
+          <p>"Our remote team finally feels connected. Taskify is simple, fast, and reliable. Highly recommended!"</p>
+          <div className="testimonial-author">
+            <div className="testimonial-avatar">{/* Avatar for David R. */}</div>
+            <p>- David R., Startup Founder</p>
+          </div>
+        </div>
+        <div className="testimonial-item">
+          <p>"We tried 3 other tools, but Taskify was the only one our team actually enjoyed using. It just works!"</p>
+          <div className="testimonial-author">
+            <div className="testimonial-avatar">{/* Avatar for Priya K. */}</div>
+            <p>- Priya K., Operations Lead</p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -130,20 +153,23 @@ function PricingSection() {
   return (
     <section id="pricing" className="App-section pricing-section">
       <h2>Simple, transparent pricing.</h2>
-      <div className="pricing-plan">
-        <h3>Starter (Free)</h3>
-        <p>For individuals and small teams just getting started.</p>
-        <button>Get Started</button>
-      </div>
-      <div className="pricing-plan">
-        <h3>Pro ($9/month)</h3>
-        <p>Unlimited projects and advanced features for growing teams.</p>
-        <button>Get Started</button>
-      </div>
-      <div className="pricing-plan">
-        <h3>Team ($29/month)</h3>
-        <p>Best for companies managing multiple teams and projects.</p>
-        <button>Get Started</button>
+      <div className="pricing-grid"> {/* Add a grid container for pricing plans */}
+        <div className="pricing-plan">
+          <h3>Starter (Free)</h3>
+          <p>For individuals and small teams just getting started.</p>
+          <button>Get Started</button>
+        </div>
+        <div className="pricing-plan highlighted-plan">
+          <div className="popular-badge">Most Popular</div>
+          <h3>Pro ($9/month)</h3>
+          <p>Unlimited projects and advanced features for growing teams.</p>
+          <button>Get Started</button>
+        </div>
+        <div className="pricing-plan">
+          <h3>Team ($29/month)</h3>
+          <p>Best for companies managing multiple teams and projects.</p>
+          <button>Get Started</button>
+        </div>
       </div>
     </section>
   );
@@ -197,6 +223,12 @@ function FooterSection() {
       </p>
       <p>Privacy Policy | Terms of Service</p>
       <p>Taskify — simple project management for modern teams.</p>
+      <p className="footer-love">Made with ❤️ by Your Name</p>
+      <div className="social-links">
+        {/* Placeholder for social media icons */}
+        <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </div>
     </footer>
   );
 }
