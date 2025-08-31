@@ -16,6 +16,10 @@ function Navbar() {
   const y = useMotionValue(0); // This will be the actual y position of the navbar
 
   // Shrink and blur
+  const scale = useTransform(y, [-100, 0], [0.9, 1]); // When y is -100, scale is 0.9; when y is 0, scale is 1
+  const filter = useTransform(y, [-100, 0], ['blur(5px)', 'blur(0px)']); // When y is -100, blur is 5px; when y is 0, blur is 0px
+
+  // Shrink and blur
 
   // Define the scroll distance for the reveal/hide animation
   
