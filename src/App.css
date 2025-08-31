@@ -1,0 +1,290 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #111827; /* Dark background color for the navbar */
+  color: #FFFFFF; /* White text color for navbar content */
+  padding: 1rem 0; /* Vertical padding for the navbar */
+  position: sticky; /* Makes the navbar stick to the top when scrolling */
+  top: 0; /* Sticks to the very top of the viewport */
+  z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
+
+.navbar .container {
+  display: flex; /* Uses flexbox for layout */
+  justify-content: space-between; /* Distributes items with space between them */
+  align-items: center; /* Vertically aligns items in the center */
+  max-width: 1200px; /* Maximum width of the content area */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 0 2rem; /* Horizontal padding for the container */
+}
+
+.navbar .logo {
+  font-family: 'Poppins', sans-serif; /* Poppins font for the logo */
+  font-weight: 700; /* Bold font weight */
+  font-size: 1.5rem; /* Large font size for the logo */
+  color: #FFFFFF; /* White color for the logo text */
+  text-decoration: none; /* Removes underline from the logo link */
+}
+
+.navbar .nav-links {
+  list-style: none; /* Removes bullet points from the list */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  display: flex; /* Uses flexbox for horizontal layout of links */
+}
+
+.navbar .nav-links li {
+  margin-left: 2rem; /* Adds space between navigation items */
+}
+
+.navbar .nav-links a {
+  font-family: 'Poppins', sans-serif; /* Poppins font for navigation links */
+  color: #D1D5DB; /* Light gray color for links */
+  text-decoration: none; /* Removes underline from links */
+  font-weight: 500; /* Medium font weight */
+  transition: color 0.3s ease; /* Smooth transition for color changes on hover */
+}
+
+.navbar .nav-links a:hover {
+  color: #FFFFFF; /* White color on hover */
+}
+
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif; /* Default font for the body */
+  background-color: #E5E7EB; /* Light gray background color */
+  color: #111827; /* Dark charcoal text color */
+  margin: 0; /* Removes default body margin */
+}
+
+.App {
+  text-align: center; /* Centers text within the App component */
+}
+
+.App-section {
+  padding: 4rem 2rem; /* Padding for all main sections */
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif; /* Poppins font for headings */
+  color: #111827; /* Dark charcoal color for headings */
+}
+
+h1 {
+  font-size: 48px; /* Large font size for main headings */
+  font-weight: 700; /* Bold font weight */
+}
+
+h2 {
+  font-size: 36px; /* Medium-large font size for subheadings */
+  font-weight: 700; /* Bold font weight */
+  margin-bottom: 2rem; /* Space below subheadings */
+}
+
+p {
+  font-size: 18px; /* Font size for paragraphs */
+  color: #6B7280; /* Medium gray color for paragraphs */
+  line-height: 1.6; /* Line height for readability */
+}
+
+button {
+  font-family: 'Poppins', sans-serif; /* Poppins font for buttons */
+  font-weight: 500; /* Medium font weight */
+  font-size: 16px; /* Font size for buttons */
+  text-transform: uppercase; /* Uppercase text for buttons */
+  padding: 1rem 2rem; /* Padding for buttons */
+  border-radius: 0.5rem; /* Rounded corners for buttons */
+  border: none; /* Removes button border */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for background and transform */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  background-color: #4F46E5; /* Indigo blue background for primary buttons */
+  color: #FFFFFF; /* White text color for buttons */
+}
+
+button:hover {
+  background-color: #4338CA; /* Darker indigo on hover */
+  transform: translateY(-2px); /* Slight upward lift on hover */
+}
+
+/* Hero Section Styles */
+.hero-section {
+  background-color: #FFFFFF; /* White background for the hero section */
+  padding: 6rem 2rem; /* Generous padding for the hero section */
+}
+
+.hero-section h1 {
+  margin-bottom: 1rem; /* Space below the hero heading */
+}
+
+.hero-section p {
+  max-width: 600px; /* Limits the width of the paragraph for readability */
+  margin: 0 auto 2rem; /* Centers the paragraph and adds bottom margin */
+}
+
+.secondary-cta {
+  font-family: 'Poppins', sans-serif; /* Poppins font for secondary CTA */
+  font-weight: 500; /* Medium font weight */
+  color: #4F46E5; /* Indigo blue color for secondary CTA */
+  text-decoration: none; /* Removes underline */
+  margin-left: 1rem; /* Space to the left of the secondary CTA */
+}
+
+.secondary-cta:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Features Section Styles */
+.features-section {
+  background-color: #F9FAFB; /* Light gray background for features section */
+}
+
+.features-section .service-item {
+  background-color: #FFFFFF; /* White background for individual service items */
+  padding: 2rem; /* Padding for service items */
+  border-radius: 0.5rem; /* Rounded corners */
+  margin-bottom: 1.5rem; /* Space below service items */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+/* How It Works Section Styles */
+.how-it-works-section {
+  background-color: #FFFFFF; /* White background for how it works section */
+}
+
+/* Testimonials Section Styles */
+.testimonials-section {
+  background-color: #F9FAFB; /* Light gray background for testimonials section */
+}
+
+.testimonial-item {
+  background-color: #FFFFFF; /* White background for individual testimonial items */
+  padding: 2rem; /* Padding for testimonial items */
+  border-radius: 0.5rem; /* Rounded corners */
+  margin-bottom: 1.5rem; /* Space below testimonial items */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.testimonial-item p:first-child {
+  font-style: italic; /* Italic style for the testimonial quote */
+}
+
+/* Pricing Section Styles */
+.pricing-section {
+  background-color: #FFFFFF; /* White background for pricing section */
+}
+
+.pricing-plan {
+  background-color: #F9FAFB; /* Light gray background for pricing plans */
+  padding: 2rem; /* Padding for pricing plans */
+  border-radius: 0.5rem; /* Rounded corners */
+  margin-bottom: 1.5rem; /* Space below pricing plans */
+  border: 1px solid #E5E7EB; /* Light border */
+}
+
+/* CTA Banner Section Styles */
+.cta-banner-section {
+  background-color: #4F46E5; /* Indigo blue background for CTA banner */
+  color: #FFFFFF; /* White text color */
+}
+
+.cta-banner-section h2 {
+  color: #FFFFFF; /* White color for heading in CTA banner */
+}
+
+/* Footer Section Styles */
+.footer-section {
+  background-color: #111827; /* Dark background for the footer */
+  color: #FFFFFF; /* White text color */
+  padding: 2rem; /* Padding for the footer */
+}
+
+.footer-section p {
+  color: #D1D5DB; /* Light gray color for footer text */
+  margin: 0.5rem 0; /* Vertical margin for footer paragraphs */
+}
+
+/* Contact Section Styles */
+.contact-section {
+  background-color: #F9FAFB; /* Light gray background for contact section */
+  color: #111827; /* Dark charcoal text color */
+}
+
+.contact-section h2 {
+  color: #111827; /* Dark charcoal color for heading */
+}
+
+.contact-section p {
+  color: #6B7280; /* Medium gray color for paragraphs */
+}
+
+.contact-section form {
+  display: flex; /* Uses flexbox for form layout */
+  flex-direction: column; /* Arranges form elements vertically */
+  max-width: 600px; /* Limits form width */
+  margin: 0 auto; /* Centers the form horizontally */
+}
+
+.contact-section input,
+.contact-section textarea {
+  font-family: 'Inter', sans-serif; /* Inter font for input fields */
+  font-size: 1rem; /* Font size for input fields */
+  padding: 1rem; /* Padding for input fields */
+  margin-bottom: 1rem; /* Space below input fields */
+  border: 1px solid #E5E7EB; /* Light border for input fields */
+  border-radius: 0.5rem; /* Rounded corners for input fields */
+  background-color: #FFFFFF; /* White background for input fields */
+  color: #111827; /* Dark charcoal text color for input fields */
+}
+
+.contact-section textarea {
+  min-height: 150px; /* Minimum height for textarea */
+  resize: vertical; /* Allows vertical resizing of textarea */
+}
+
+.contact-section button {
+  align-self: flex-start; /* Aligns the button to the start of the flex container */
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none; /* Hidden by default on larger screens */
+  flex-direction: column; /* Arranges bars vertically */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  background: transparent; /* Transparent background */
+  border: none; /* No border */
+  padding: 0; /* No padding */
+}
+
+.hamburger .bar {
+  width: 25px; /* Width of each bar */
+  height: 3px; /* Height of each bar */
+  background-color: #FFFFFF; /* White color for bars */
+  margin: 4px 0; /* Vertical margin between bars */
+  transition: 0.4s; /* Smooth transition for bar animations */
+}
+
+/* Media Query for smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none; /* Hides navigation links by default on small screens */
+    flex-direction: column; /* Arranges links vertically */
+    width: 100%; /* Full width */
+    position: absolute; /* Positions absolutely within the navbar */
+    top: 70px; /* Positions below the navbar header */
+    left: 0; /* Aligns to the left */
+    background-color: #4F46E5; /* Indigo blue background for mobile menu */
+    text-align: center; /* Centers text */
+  }
+
+  .navbar .nav-links.open {
+    display: flex; /* Displays the navigation links when the 'open' class is applied */
+  }
+
+  .navbar .nav-links li {
+    margin: 1rem 0; /* Vertical margin for mobile navigation items */
+  }
+
+  .hamburger {
+    display: flex; /* Displays the hamburger menu button on small screens */
+  }
+}
