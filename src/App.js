@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './App.css';
 
 /**
@@ -7,8 +8,23 @@ import './App.css';
  * Includes responsive behavior with a hamburger menu for smaller screens.
  */
 function Navbar() {
-  // State to manage the visibility of the mobile navigation menu
   const [isOpen, setIsOpen] = useState(false);
+  const { scrollY } = useScroll();
+
+  // Shrink and blur
+  const scale = useTransform(scrollY, [0, 100], [1, 0.9]);
+  const filter = useTransform(scrollY, [0, 100], ['blur(0px)', 'blur(5px)']);
+
+  // Hide/reveal based on scroll direction
+  const y = useTransform(scrollY, (latestY) => {
+    const previousY = scrollY.getPrevious(); // Get previous scroll position
+    if (latestY > previousY && latestY > 100) { // Scrolling down and past 100px
+      return -100; // Hide navbar (move up)
+    } else if (latestY < previousY || latestY <= 100) { // Scrolling up or near top
+      return 0; // Show navbar (move to original position)
+    }
+    return 0; // Default to visible
+  });
 
   // Function to toggle the mobile menu's open/closed state
   const toggleMenu = () => {
@@ -16,7 +32,19 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <motion.nav
+      className="navbar"
+      style={{
+        scale,
+        filter,
+        y,
+        position: 'fixed', // Ensure it stays fixed
+        width: '100%', // Ensure it spans full width
+        top: 0,
+        left: 0,
+        zIndex: 1000,
+      }}
+    >
       <div className="container">
         {/* Logo - links to the top of the page */}
         <a href="/" className="logo">Taskify</a>
@@ -36,7 +64,7 @@ function Navbar() {
           <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
 
