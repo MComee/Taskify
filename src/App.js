@@ -19,7 +19,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="container">
         {/* Logo - links to the top of the page */}
-        <a href="#" className="logo">Taskify</a>
+        <a href="/" className="logo">Taskify</a>
         {/* Hamburger menu button for mobile view */}
         <button className="hamburger" onClick={toggleMenu}>
           <span className="bar"></span>
@@ -50,7 +50,7 @@ function HeroSection() {
       <h1>Organize your team’s work in minutes.</h1>
       <p>Taskify helps remote teams stay aligned, boost productivity, and hit deadlines without the chaos of endless emails.</p>
       <button>Get Started Free</button>
-      <a href="#" className="secondary-cta">Watch Demo</a>
+      <a href="#demo" className="secondary-cta">Watch Demo</a>
     </section>
   );
 }
