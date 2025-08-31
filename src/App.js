@@ -12,8 +12,8 @@ function Navbar() {
   const { scrollY } = useScroll();
 
   // Shrink and blur
-  const scale = useTransform(scrollY, [0, 100], [1, 0.9]);
-  const filter = useTransform(scrollY, [0, 100], ['blur(0px)', 'blur(5px)']);
+  const scale = useTransform(scrollY, [0, 20], [1, 0.9]);
+  const filter = useTransform(scrollY, [0, 20], ['blur(0px)', 'blur(5px)']);
 
   // Hide/reveal based on scroll direction
   const lastY = useRef(0);
