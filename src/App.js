@@ -119,7 +119,7 @@ function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
       >
-        Streamline your projects and enhance team productivity.
+        Streamline your projectsand enhance team productivity.
       </motion.p>
       <div className="hero-actions">
         <motion.button
