@@ -177,6 +177,7 @@ button:hover {
   color: var(--bg-white); /* White text color */
   font-weight: 600;
   margin-bottom: 0.5rem;
+  text-align: center; /* Center the tagline */
 }
 
 .hero-actions {
@@ -396,6 +397,7 @@ button:hover {
   background-color: var(--text-dark); /* Dark background for the footer */
   color: var(--bg-white); /* White text color */
   padding: 2rem; /* Padding for the footer */
+  text-align: center; /* Center all content within the footer */
 }
 
 .footer-section p {
