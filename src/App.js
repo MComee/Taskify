@@ -147,14 +147,7 @@ function HeroSection() {
       >
         Used by 300+ teams
       </motion.div>
-      <motion.div
-        className="hero-illustration-placeholder"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
-        style={{ y: yRange }}
-      >
-        {/* Placeholder for SVG illustration */}
-      </motion.div>
+      
     </section>
   );
 }
