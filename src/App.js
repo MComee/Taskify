@@ -95,7 +95,7 @@ function Navbar() {
  */
 function HeroSection() {
   const { scrollYProgress } = useScroll();
-  const yRange = useTransform(scrollYProgress, [0, 1], [0, 200]); // Adjust 200 for desired parallax effect
+  
 
   return (
     <section className="App-section hero-section">
