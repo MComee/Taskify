@@ -94,7 +94,7 @@ function Navbar() {
  * Displays the main heading, a descriptive paragraph, and call-to-action buttons.
  */
 function HeroSection() {
-  const { scrollYProgress } = useScroll();
+  
   
 
   return (
