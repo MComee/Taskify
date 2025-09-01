@@ -142,9 +142,6 @@ button:hover {
   left: 50%;
   transform: translate(-50%, -50%); /* Center the illustration */
   opacity: 0.3; /* Make it subtle */
-  width: 100%; /* 100% width of the hero section */
-  height: 120%; /* More than 100% of the height for parallax */
-  object-fit: cover; /* Ensure it covers the area */
 }
 
 /* Ensure other content is above the illustration */
