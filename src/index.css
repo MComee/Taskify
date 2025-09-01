@@ -1,0 +1,19 @@
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling when navigating to anchor links */
+}
+
+/* Body styles */
+body {
+  margin: 0; /* Removes default body margin */
+  font-family: 'Inter', sans-serif; /* Sets the primary font for the body */
+  -webkit-font-smoothing: antialiased; /* Improves font rendering on macOS/iOS */
+  -moz-osx-font-smoothing: grayscale; /* Improves font rendering on Firefox on macOS */
+  background-color: #E5E7EB; /* Sets the background color for the entire page */
+  color: #111827; /* Sets the default text color for the body */
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif; /* Sets the font for all heading elements */
+}
