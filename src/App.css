@@ -125,21 +125,14 @@ button:hover {
 
 /* Hero Section Styles */
 .hero-section {
-  background-color: var(--primary-indigo); /* Changed background to indigo for better contrast with white text */
+  background-color: var(--bg-white); /* White background for the hero section */
   padding: 6rem 2rem; /* Generous padding for the hero section */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Left-align content */
+  align-items: center;
   justify-content: center;
   position: relative; /* Establish positioning context */
   overflow: hidden; /* Hide overflow if illustration extends beyond section */
-}
-
-.hero-section h1,
-.hero-section p,
-.hero-section .hero-tagline {
-  color: var(--bg-white); /* White text color */
-  text-align: left; /* Ensure text is left-aligned */
 }
 
 .hero-illustration-placeholder {
@@ -148,7 +141,7 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Center the illustration */
-  opacity: 0.1; /* Make it more subtle */
+  opacity: 0.3; /* Make it subtle */
   width: 100%; /* 100% width of the hero section */
   height: 120%; /* More than 100% of the height for parallax */
   object-fit: cover; /* Ensure it covers the area */
@@ -169,12 +162,12 @@ button:hover {
 
 .hero-section p {
   max-width: 600px; /* Limits the width of the paragraph for readability */
-  margin: 0 0 2rem 0; /* Adjust margin for left alignment */
+  margin: 0 auto 2rem; /* Centers the paragraph and adds bottom margin */
 }
 
 .hero-tagline {
   font-size: 1.2rem;
-  color: var(--bg-white); /* White text color */
+  color: var(--primary-indigo);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
