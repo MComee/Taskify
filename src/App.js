@@ -112,14 +112,14 @@ function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
       >
-        Organize your team’s work in minutes.
+        Project Managment and Team Collaboration.
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
       >
-        Taskify helps remote teams stay aligned, boost productivity, and hit deadlines without the chaos of endless emails.
+        Streamline your projectsand enhance team productivity.
       </motion.p>
       <div className="hero-actions">
         <motion.button
