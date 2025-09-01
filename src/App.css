@@ -167,10 +167,13 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.hero-illustration {
-  max-width: 500px;
-  height: auto;
+.hero-illustration-placeholder {
+  width: 500px;
+  height: 300px;
+  background-color: var(--light-gray);
+  border-radius: 12px;
   margin-top: 3rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .secondary-cta {

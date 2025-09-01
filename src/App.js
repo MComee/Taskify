@@ -94,18 +94,67 @@ function Navbar() {
  * Displays the main heading, a descriptive paragraph, and call-to-action buttons.
  */
 function HeroSection() {
+  const { scrollYProgress } = useScroll();
+  const yRange = useTransform(scrollYProgress, [0, 1], [0, 200]); // Adjust 200 for desired parallax effect
+
   return (
     <section className="App-section hero-section">
-      <p className="hero-tagline">Simplify tasks. Celebrate wins. Stay on track.</p>
-      <h1>Organize your team’s work in minutes.</h1>
-      <p>Taskify helps remote teams stay aligned, boost productivity, and hit deadlines without the chaos of endless emails.</p>
+      <motion.p
+        className="hero-tagline"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        Simplify tasks. Celebrate wins. Stay on track.
+      </motion.p>
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+      >
+        Organize your team’s work in minutes.
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+      >
+        Taskify helps remote teams stay aligned, boost productivity, and hit deadlines without the chaos of endless emails.
+      </motion.p>
       <div className="hero-actions">
-        <button>Get Started Free</button>
-        <a href="#demo" className="secondary-cta">Watch Demo</a>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          Get Started Free
+        </motion.button>
+        <motion.a
+          href="#demo"
+          className="secondary-cta"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          Watch Demo
+        </motion.a>
       </div>
-      <div className="hero-badge">Used by 300+ teams</div>
-      {/* Placeholder for SVG illustration */}
-      {/* <img src="/path/to/your/illustration.svg" alt="Teamwork illustration" className="hero-illustration" /> */}
+      <motion.div
+        className="hero-badge"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+      >
+        Used by 300+ teams
+      </motion.div>
+      <motion.div
+        className="hero-illustration-placeholder"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
+        style={{ y: yRange }}
+      >
+        {/* Placeholder for SVG illustration */}
+      </motion.div>
     </section>
   );
 }
