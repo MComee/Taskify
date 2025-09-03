@@ -248,14 +248,6 @@ button:hover {
   background-color: var(--bg-light); /* Light gray background for testimonials section */
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .testimonial-item {
   background-color: var(--bg-white); /* White background for individual testimonial items */
   padding: 2rem; /* Padding for testimonial items */

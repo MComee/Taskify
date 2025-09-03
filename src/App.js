@@ -1,5 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useMotionValueEvent } from 'framer-motion';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
 
 /**
@@ -206,10 +209,37 @@ function HowItWorksSection() {
  * Displays customer testimonials to build trust and credibility.
  */
 function TestimonialsSection() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '20px',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
     <section id="testimonials" className="App-section testimonials-section">
       <h2>Trusted by teams everywhere.</h2>
-      <div className="testimonials-grid"> {/* Add a grid container for testimonials */}
+      <Slider {...settings}>
         <div className="testimonial-item">
           <p>"I can’t believe how much easier Taskify made managing my team! It’s a game-changer for our agency."</p>
           <div className="testimonial-author">
@@ -238,7 +268,7 @@ function TestimonialsSection() {
             <p>- John D., Production Manager</p>
           </div>
         </div>
-      </div>
+      </Slider>
     </section>
   );
 }
