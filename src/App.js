@@ -231,6 +231,13 @@ function TestimonialsSection() {
             <p>- Priya K., Operations Lead</p>
           </div>
         </div>
+        <div className="testimonial-item">
+          <p>"Taskify has been a lifesaver for our team. It's so easy to use and has helped us stay organized and on track."</p>
+          <div className="testimonial-author">
+            <div className="testimonial-avatar">{/* Avatar for John Doe */}</div>
+            <p>- John D., Production Manager</p>
+          </div>
+        </div>
       </div>
     </section>
   );
