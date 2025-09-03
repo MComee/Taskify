@@ -269,8 +269,8 @@ button:hover {
 .carousel-track {
   display: flex;
   gap: 1.5rem;
-  width: calc(200% + 1.5rem);
-  animation: scroll 30s linear infinite;
+  width: max-content;
+  animation: scroll linear infinite;
 }
 
 .carousel-slide {
@@ -282,14 +282,14 @@ button:hover {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - (1.5rem / 2)));
+    transform: translateX(-50%);
   }
 }
 
 /* Media Query for smaller screens (max-width: 768px) */
 @media (max-width: 768px) {
   .carousel-track {
-    animation-duration: 20s;
+    
   }
   .testimonial-item {
     width: 80vw;
