@@ -39,8 +39,10 @@ export default function Carousel({ slides, className }) {
       if (ref) observer.observe(ref);
     });
 
+    const currentSlideRefs = slideRefs.current; // Capture the current value
+
     return () => {
-      slideRefs.current.forEach((ref) => {
+      currentSlideRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
