@@ -204,7 +204,7 @@ button:hover {
 }
 
 .features-section .service-item {
-  background-color: var(--bg-white); /* White background for individual service items */
+  background-color: #ffffff; /* White background for individual service items */
   padding: 2rem; /* Padding for service items */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* Subtle shadow */
@@ -236,14 +236,6 @@ button:hover {
   width: 30px;
   height: 30px;
   color: var(--bg-white);
-}
-
-.feature-card:nth-child(odd) {
-  background-color: var(--bg-white);
-}
-
-.feature-card:nth-child(even) {
-  background-color: var(--bg-light);
 }
 
 /* How It Works Section Styles */
