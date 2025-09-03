@@ -1,8 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useMotionValueEvent } from 'framer-motion';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Carousel from './Carousel';
+import TestimonialCard from './TestimonialCard';
 import './App.css';
 
 /**
@@ -209,69 +208,44 @@ function HowItWorksSection() {
  * Displays customer testimonials to build trust and credibility.
  */
 function TestimonialsSection() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '20px',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
+  const testimonials = [
+    {
+      id: '1',
+      content: 'I can’t believe how much easier Taskify made managing my team! It’s a game-changer for our agency.',
+      author: '- Sarah L., Marketing Manager',
+    },
+    {
+      id: '2',
+      content: 'Our remote team finally feels connected. Taskify is simple, fast, and reliable. Highly recommended!',
+      author: '- David R., Startup Founder',
+    },
+    {
+      id: '3',
+      content: 'We tried 3 other tools, but Taskify was the only one our team actually enjoyed using. It just works!',
+      author: '- Priya K., Operations Lead',
+    },
+    {
+      id: '4',
+      content: 'Taskify has been a lifesaver for our team. It\'s so easy to use and has helped us stay organized and on track.',
+      author: '- John D., Production Manager',
+    },
+  ];
+
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
+  const slides = duplicatedTestimonials.map((testimonial, index) => ({
+    id: `${testimonial.id}-${index}`,
+    component: <TestimonialCard content={testimonial.content} author={testimonial.author} />
+  }));
+
   return (
     <section id="testimonials" className="App-section testimonials-section">
       <h2>Trusted by teams everywhere.</h2>
-      <Slider {...settings}>
-        <div className="testimonial-item">
-          <p>"I can’t believe how much easier Taskify made managing my team! It’s a game-changer for our agency."</p>
-          <div className="testimonial-author">
-            <div className="testimonial-avatar">{/* Avatar for Sarah L. */}</div>
-            <p>- Sarah L., Marketing Manager</p>
-          </div>
-        </div>
-        <div className="testimonial-item">
-          <p>"Our remote team finally feels connected. Taskify is simple, fast, and reliable. Highly recommended!"</p>
-          <div className="testimonial-author">
-            <div className="testimonial-avatar">{/* Avatar for David R. */}</div>
-            <p>- David R., Startup Founder</p>
-          </div>
-        </div>
-        <div className="testimonial-item">
-          <p>"We tried 3 other tools, but Taskify was the only one our team actually enjoyed using. It just works!"</p>
-          <div className="testimonial-author">
-            <div className="testimonial-avatar">{/* Avatar for Priya K. */}</div>
-            <p>- Priya K., Operations Lead</p>
-          </div>
-        </div>
-        <div className="testimonial-item">
-          <p>"Taskify has been a lifesaver for our team. It's so easy to use and has helped us stay organized and on track."</p>
-          <div className="testimonial-author">
-            <div className="testimonial-avatar">{/* Avatar for John Doe */}</div>
-            <p>- John D., Production Manager</p>
-          </div>
-        </div>
-      </Slider>
+      <Carousel slides={slides} />
     </section>
   );
 }
+
 
 /**
  * Pricing Section Component
