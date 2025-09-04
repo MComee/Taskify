@@ -21,8 +21,6 @@ export default function Carousel({ slides, className }) {
             const newState = { ...prev };
             if (entry.isIntersecting) {
               newState[slideId] = true;
-            } else {
-              delete newState[slideId]; // Remove from visible when not intersecting
             }
             return newState;
           });
