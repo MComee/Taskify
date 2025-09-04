@@ -325,7 +325,7 @@ function FooterSection() {
       </p>
       <p>Privacy Policy | Terms of Service</p>
       <p>Taskify — simple project management for modern teams.</p>
-      <p className="footer-love">Made with ❤️ by Your Name</p>
+      <p className="footer-love">Made with ❤️ by M.C.</p>
       <div className="social-links">
         {/* Placeholder for social media icons */}
         <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
